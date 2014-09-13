@@ -35,7 +35,7 @@ legend("topright", names(requested_data)[7:9], cex=0.8,col = c("black","red","bl
     lty=c(1,1), lwd=1, bty="n")
 
 #plot 4
-with(requested_data, plot(Datetime,Global_active_power, type="l",xlab="datetime"))  ## Create plot on screen device
+with(requested_data, plot(Datetime,Global_reactive_power, type="l",xlab="datetime"))  ## Create plot on screen device
 
 
 # Copy the plot from the screen to a png file
