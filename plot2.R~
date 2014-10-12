@@ -1,8 +1,8 @@
 #####################################
-#  File to generate the first plot3 #
+#  File to generate the first plot2 #
 #  of the Course Project #1         #
 #####################################
-   
+
 
 # Read the original data
 all_data <- read.csv("household_power_consumption.txt", sep=";", na.strings="?", 
@@ -18,15 +18,11 @@ requested_data$Datetime <- paste(requested_data$Date,requested_data$Time)
 requested_data$Datetime  <- strptime(requested_data$Datetime , "%d/%m/%Y %H:%M:%S")
 
 # Plot the data
-plot(requested_data$Datetime,requested_data$Sub_metering_1,ylab="Energy sub metering", type="l",xlab="", col="black")
-lines(requested_data$Datetime,requested_data$Sub_metering_2, type="l",col="red")
-lines(requested_data$Datetime,requested_data$Sub_metering_3, type="l",col="blue")
+with(requested_data, plot(Datetime,Global_active_power,ylab="Global Active Power(kilowatts)", type="l",xlab=""))  ## Create plot on screen device
 
-legend("topright", names(requested_data)[7:9], cex=0.8,col = c("black","red","blue"),
-    lty=c(1,1), lwd=1, bty="o")
 
 # Copy the plot from the screen to a png file
-dev.copy(png, file = "plot3.png",width = 480, height = 480, units = "px") 
+dev.copy(png, file = "plot2.png",width = 480, height = 480, units = "px") 
 
 # Close the device
 dev.off()  
