@@ -1,8 +1,8 @@
 #####################################
 #  File to generate the first plot4 #
-#  of the Course Project # 1        #
+#  of the Course Project #1         #
 #####################################
-     
+
 
 # Read the original data
 all_data <- read.csv("household_power_consumption.txt", sep=";", na.strings="?", 
